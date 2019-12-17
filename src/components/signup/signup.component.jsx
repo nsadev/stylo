@@ -4,8 +4,7 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
-
-import './signup.styles.scss';
+import { SignUpContainer, SignUpTitle } from './signup.styles';
 
 const SignUp = () => {
   const [userCredentials, setUserCredentials] = useState({
@@ -51,9 +50,10 @@ const SignUp = () => {
   };
 
   return(
-    <div className='sign-up'>
-      <h2 className='title'>I don't have an account</h2>
+    <SignUpContainer>
+      <SignUpTitle>I don't have an account</SignUpTitle>
       <span>Sign up with your email and password</span>
+
       <form className='signup-form' onSubmit={handleSubmit}>
         <FormInput
           type='text'
@@ -89,7 +89,7 @@ const SignUp = () => {
         />
         <CustomButton type='submit'>SIGN UP</CustomButton>
       </form>
-    </div>
+    </SignUpContainer>
   )
 }
 

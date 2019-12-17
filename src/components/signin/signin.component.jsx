@@ -4,7 +4,6 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
-
 import { SignInContainer, SignInTitle, SignInButtons } from  './signin.styles';
 
 const SignIn = () => {
@@ -52,7 +51,7 @@ const SignIn = () => {
           label='Password'
           required 
         />
-        
+
         <SignInButtons>
           <CustomButton type='submit'> Sign in </CustomButton>
           <CustomButton onClick={signInWithGoogle} isGoogleSignIn> 
