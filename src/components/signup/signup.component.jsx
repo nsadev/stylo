@@ -8,7 +8,7 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 import { SignUpContainer, SignUpTitle } from './signup.styles';
 
-const SignUp = () => {
+const SignUp = ({ signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
     displayName: '',
     email: '',
@@ -26,7 +26,7 @@ const SignUp = () => {
       return;
     }
 
-    signUpStart(userCredentials);
+    signUpStart({ displayName, email, password });
   };
 
   const handleChange = event => {
