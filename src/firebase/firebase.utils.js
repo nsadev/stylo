@@ -3,15 +3,17 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: "AIzaSyBAb8xfhnG5OIxRmrtfzkCYnODVqxY7UsI",
-  authDomain: "stylo-db.firebaseapp.com",
-  databaseURL: "https://stylo-db.firebaseio.com",
-  projectId: "stylo-db",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: "",
-  messagingSenderId: "320274611871",
-  appId: "1:320274611871:web:a7ed66fbcbb36794"
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
+
+console.log(config)
 firebase.initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
